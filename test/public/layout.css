@@ -1,3 +1,22 @@
-body{
-	background-color: grey;
+#mainBody{
+    background-image: url("images/background.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+    height: auto;
+
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+#navBody{
+    background-color: black;
+}
+#footBody{
+    margin-top:  0px;
+    background-color: black;
 }
