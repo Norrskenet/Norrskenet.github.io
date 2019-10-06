@@ -1,0 +1,18 @@
+<h1>Blog Posts</h1>
+
+{{#if somethingWrong}}
+    <p>something went wrong, sorry about that!</p>
+{{else}}
+    {{#if blogposts.length}}
+        <ul>
+           
+        </ul>
+    {{else}}
+        <div class="empty">
+            <div class="empty-icon">
+                <i class="icon icon-photo"></i>
+            </div>
+            <p class="empty-title h2">There are no blog posts currently</p>
+        </div>
+    {{/if}}
+{{/if}}

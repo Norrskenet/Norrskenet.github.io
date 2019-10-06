@@ -513,6 +513,7 @@
       "resolved": "https://registry.npmjs.org/split/-/split-1.0.1.tgz",
       "version": "1.0.1"
     },
+    "sqlite3": "^4.1.0",
     "statuses": {
       "integrity": "sha1-Fhx9rBd2Wf2YEfQ3cfqZOBR4Yow=",
       "resolved": "https://registry.npmjs.org/statuses/-/statuses-1.5.0.tgz",
