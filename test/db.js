@@ -20,6 +20,14 @@ db.run(`
      )
 `)*/
 
+db.run(`
+        CREATE TABLE IF NOT EXISTS user(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            username TEXT,
+            password TEXT
+        )
+`)
+
 exports.getAllBlogPosts = function(callback){
     const query = "SELECT * FROM blogposts"
     
@@ -29,7 +37,7 @@ exports.getAllBlogPosts = function(callback){
 }
 
 exports.getPostById = function(id, callback){
-    const query = "SELECT * FROM blogposts WHERE id= ?"
+    const query = "SELECT * FROM blogposts WHERE id = ?"
     const values = [id]
 
     db.get(query, values, function(error, blogpost){
@@ -40,6 +48,33 @@ exports.getPostById = function(id, callback){
 exports.createBlogPost = function(title, date, callback){
     const query = "INSERT INTO blogposts (title, date) VALUES (?, ?)"
     const values = [title, date]
+
+    db.run(query, values, function(error){
+        const id = this.lastID
+        callback(error, id)
+    })
+}
+
+exports.deleteBlogPost = function(id, callback){
+    const query = "DELETE FROM blogposts WHERE id = ?"
+    const values = [id]
+
+    db.run(query, values, function(error){
+        callback(error, id)
+    })
+}
+
+exports.login = function(username, password, callback){
+    const query = "SELECT * FROM login WHERE (username = ? AND password = ?)"
+    const values = [username, password]
+    db.get(query, values, function(error,login){
+        callback(error,login)
+    })
+}
+
+exports.createUser = function(username, password, callback){
+    const query = "INSERT INTO user (username, password) VALUES (?, ?)"
+    const values = [username, password]
 
     db.run(query, values, function(error){
         const id = this.lastID

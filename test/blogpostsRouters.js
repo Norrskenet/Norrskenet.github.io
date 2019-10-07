@@ -32,13 +32,18 @@ router.get("/create", function(request,response){
 router.get("/:id", function(request,response){
     const id = request.params.id
     
-    db.getPostById(id, function(request,response){
+    db.getPostById(id, function(error,blogpost){
         if (error){
-
-        }
-        else{
             const model = {
-                blogposts
+                somethingWrong: true
+            }
+            response.render("post.hbs",model)
+        }
+        else
+        {
+            const model = {
+                somethingWrong: false,
+                blogpost
             }
 
             response.render("post.hbs", model)
@@ -65,7 +70,7 @@ router.post("/create", function(request,response){
 
             }
             else{
-                response.redirect("/blogposts/" + id)
+                response.redirect("/posts/" + id)
             } 
         })
     }
@@ -77,6 +82,18 @@ router.post("/create", function(request,response){
         }
         response.render("create-post.hbs", model)
     }
+})
+router.delete("posts/:id", function(request,response){
+    const id = request.body.id
+    db.deleteBlogPost(id, function(error){
+        if(error){
+
+        }
+        else{
+    
+            response.render("/posts")
+        }
+    })
 })
 
 module.exports = router

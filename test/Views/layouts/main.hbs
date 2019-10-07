@@ -12,15 +12,30 @@
 
 <body>
     <div>
-        <div id="navBody" class="navbar">
-            <section class="btn-group"> 
-                <a href="/" class="btn">Home</a>
-                <a href="/posts" class="btn">Posts</a>
-                <a href="/posts/create" class="btn"> Create Post</a>
-            </section>
-        </div>
-
+        <div id="navBody"  class="columns col-oneline">
+            <div class="navbar col-12">
+                <section class="btn-group">
+                    <a href="/" class="btn text-dark">Home</a>
+                    <a href="/posts" class="btn text-dark">Posts</a>
+                    <a href="/posts/create" class="btn text-dark"> Create Post</a>
+                </section>
+            </div>
         
+            <div class="navbar col-auto">
+                <section class="btn-group">
+                    {{#if isLoggedIn}}
+                    <a href="/logout" class="btn text-dark">Log out</a>
+                    <figure class="avatar avatar-lg" data-initial="YZ">
+                        <img src="/images/avatar.jpg" alt="">
+                        <i class="avatar-prescence online"></i>
+                    </figure>
+                    {{else}}
+                    <a href="/login" class="btn text-dark">Login</a>
+                    <a href="/sign-up" class="btn text-dark">Sign Up</a>
+                    {{/if}}
+                </section>
+            </div>
+        </div>
         <div id="mainBody" class="container"> 
            <div class="columns">
                <div class="column col-xs-12 col-2 text-light">

@@ -5,8 +5,14 @@
 {{else}}
     {{#if blogposts.length}}
         <ul>
-           
+           {{#each blogposts}}
+				<li><a href="/posts/{{id}}">{{title}}</a></li>
+			{{/each}}
         </ul>
+        <form action="/posts/{{id}}" method="DELETE">
+            <input type="integer" name="id">
+            <input type="submit" value="Delete" class="btn btn-primary"/>
+        </form>
     {{else}}
         <div class="empty">
             <div class="empty-icon">
