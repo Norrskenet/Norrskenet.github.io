@@ -34,6 +34,7 @@
       "resolved": "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.0.tgz",
       "version": "1.0.0"
     },
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "brace-expansion": {
       "integrity": "sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==",
@@ -152,6 +153,7 @@
     },
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
+    "express-paginate": "^1.0.0",
     "express-session": "^1.16.2",
     "finalhandler": {
       "integrity": "sha512-aAWcW57uxVNrQZqFXjITpW3sIUQmHGG3qSb9mUah9MgMC4NeWhNOlNjXEYq3HjRAvL6arUviZGGJsBg6z0zsWA==",
@@ -210,7 +212,7 @@
       "resolved": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.2.tgz",
       "version": "4.2.2"
     },
-    "handlebars": "^4.4.2",
+    "handlebars": "^4.4.3",
     "has-symbols": {
       "integrity": "sha1-uhqPGvKg/DllD1yFA2dwQSIGO0Q=",
       "resolved": "https://registry.npmjs.org/has-symbols/-/has-symbols-1.0.0.tgz",
@@ -326,6 +328,7 @@
       "resolved": "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz",
       "version": "2.0.0"
     },
+    "multer": "^1.4.2",
     "negotiator": {
       "integrity": "sha512-hZXc7K2e+PgeI1eDBe/10Ard4ekbfrrqG8Ep+8Jmf4JID2bNg7NvCPOZN+kfF574pFQI7mum2AUqDidoKqcTOw==",
       "resolved": "https://registry.npmjs.org/negotiator/-/negotiator-0.6.2.tgz",
@@ -417,6 +420,7 @@
       "resolved": "https://registry.npmjs.org/proxy-addr/-/proxy-addr-2.0.5.tgz",
       "version": "2.0.5"
     },
+    "python": "0.0.4",
     "qs": {
       "integrity": "sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==",
       "resolved": "https://registry.npmjs.org/qs/-/qs-6.7.0.tgz",
@@ -486,6 +490,7 @@
       "resolved": "https://registry.npmjs.org/send/-/send-0.17.1.tgz",
       "version": "0.17.1"
     },
+    "sequelize": "^5.19.6",
     "serve-static": {
       "integrity": "sha512-JMrvUwE54emCYWlTI+hGrGv5I8dEwmco/00EvkzIIsR7MqrHonbD9pO2MOfFnpFntl7ecpZs+3mW+XbQZu9QCg==",
       "requires": {

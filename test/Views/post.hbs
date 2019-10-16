@@ -1,7 +1,27 @@
 
 {{#if blogpost}}
     <h1>{{blogpost.title}}</h1>
-    <p>{{blogpost.date}}</p>
+    <p>{{blogpost.textbody}}</p>
+    {{#if isLoggedIn}}
+    <form action="/posts/delete" method="POST">
+        <input type="number" name="id" value="{{blogpost.id}}" readonly hidden>
+        <input type="submit" value="Delete" class="btn btn-primary"/>
+    </form>
+    <form action="/posts/edit" method="POST">
+        <input type="number" name="id" value="{{blogpost.id}}" readonly hidden>
+        <input type="submit" value="Edit" class="btn btn-primary"/>
+    </form>
+    {{/if}}
 {{else}}
-    <p>There is no blog post with that id.</p>
+    <p>404: can find a blog post with that id.</p>
 {{/if}}
+   <h3>Comments</h3>
+    {{#each comments}}
+           <p>{{name}}: {{comments}}</p>
+    {{/each}}
+    <form action="/posts/comments" method="POST">
+        <input type="text" name="name" placeholder="Name">
+        <input type="text" name="message" placeholder="Message">
+        <input type="number" name="id" value="{{blogpost.id}}" readonly hidden>
+        <input type="submit" value="Post Comment" class="btn btn-primary"/>
+    </form>

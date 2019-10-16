@@ -1,0 +1,29 @@
+<h1>Edit Post</h1>
+{{#if blogpost}}
+<form class="form-horizontal col-6" action="/posts/edit/:id" method="POST">
+   
+    <div class="form-group">
+        <div class="col-4 col-sm-12">
+            <input type="number" name="id" value="{{blogpost.id}}" readonly hidden>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-4 col-sm-12">
+            <textarea name="title" value="{{title}}" class="form-input" type="text" id="input-title"
+                placeholder="{{blogpost.title}}">{{blogpost.title}}</textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-9 col-sm-12">
+            <textarea name="textbody" value="{{textxbody}}" class="form-input" type="text" id="input-textbody"
+                placeholder="{{blogpost.textbody}}">{{blogpost.textbody}}</textarea>
+        </div>
+    </div>
+
+    <input type="submit" value="Edit Post" class="btn btn-primary">
+</form>
+{{else}}
+<p>404: post not found</p>
+{{/if}}

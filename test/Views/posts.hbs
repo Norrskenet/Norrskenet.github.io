@@ -1,24 +1,48 @@
 <h1>Blog Posts</h1>
-
 {{#if somethingWrong}}
     <p>something went wrong, sorry about that!</p>
 {{else}}
-    {{#if blogposts.length}}
-        <ul>
-           {{#each blogposts}}
-				<li><a href="/posts/{{id}}">{{title}}</a></li>
-			{{/each}}
-        </ul>
-        <form action="/posts/{{id}}" method="DELETE">
-            <input type="integer" name="id">
-            <input type="submit" value="Delete" class="btn btn-primary"/>
-        </form>
-    {{else}}
-        <div class="empty">
-            <div class="empty-icon">
-                <i class="icon icon-photo"></i>
-            </div>
-            <p class="empty-title h2">There are no blog posts currently</p>
+    
+    <form action="" method="POST">
+        <input type="text" name="title" value="{{title}}">
+        <input type="submit" value="Search" class="btn btn-primary"/>
+    </form>
+
+    {{#if blogpost}}
+        <div class="columns col-oneline">
+    {{#each blogpost}}
+        <div class="card col-6">
+            <div class="card-image"><a href="/posts/post/{{id}}">{{title}}<img src="/images/cardimg1.jpg" alt=""
+                    class="img-responsive"></a></div>
         </div>
-    {{/if}}
+    {{/each}}
+    </div>
+        <ul class="pagination">
+            <li class="page-item disabled">
+                <a href="response" onclick="prevPage()" tabindex="-1">Previous</a>
+            </li>
+            <li class="page-item active text-light">
+
+            </li>
+            <li class="page-item text-light">
+                <a href="/posts/page=2">1</a>
+            </li>
+            <li class="page-item text-light">
+                <a href="#">2</a>
+            </li>
+            <li class="page-item text-light">
+                <a href="#">3</a>
+            </li>
+            <li class="page-item text-light">
+                <a href="#">Next</a>
+            </li>
+        </ul>
+        {{else}}
+            <div class="empty">
+                <div class="empty-icon">
+                    <i class="icon icon-photo"></i>
+                </div>
+                <p class="empty-title h2">There are no blog posts currently</p>
+            </div>
+        {{/if}}
 {{/if}}
