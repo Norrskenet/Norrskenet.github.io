@@ -210,7 +210,7 @@
       "resolved": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-4.2.2.tgz",
       "version": "4.2.2"
     },
-    "handlebars": "^4.4.2",
+    "handlebars": "^4.7.7",
     "has-symbols": {
       "integrity": "sha1-uhqPGvKg/DllD1yFA2dwQSIGO0Q=",
       "resolved": "https://registry.npmjs.org/has-symbols/-/has-symbols-1.0.0.tgz",
